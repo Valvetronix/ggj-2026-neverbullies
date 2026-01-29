@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://blfxxb66ypa2d"]
+
+[ext_resource type="Script" uid="uid://78217b3831bd" path="res://scripts/LevelManager.gd" id="1_sugp2"]
+[ext_resource type="Script" uid="uid://1fmddwf384yf" path="res://scripts/cutter.gd" id="2_jyhfs"]
+[ext_resource type="Texture2D" uid="uid://d3v8eynat77lb" path="res://icon.svg" id="3_tbgi4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7mycd"]
+
+[node name="Main" type="Node2D" unique_id=357197009 node_paths=PackedStringArray("sheet", "cutter")]
+top_level = true
+script = ExtResource("1_sugp2")
+sheet = NodePath("Sheet")
+cutter = NodePath("Cutter")
+
+[node name="Sheet" type="Polygon2D" parent="." unique_id=472698351]
+
+[node name="ResultContainer" type="Node2D" parent="." unique_id=214389509]
+
+[node name="Cutter" type="CharacterBody2D" parent="." unique_id=1512067300 node_paths=PackedStringArray("trail")]
+script = ExtResource("2_jyhfs")
+trail = NodePath("Trail")
+
+[node name="Sprite2D" type="Sprite2D" parent="Cutter" unique_id=832219982]
+scale = Vector2(0.109375, 0.109375)
+texture = ExtResource("3_tbgi4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cutter" unique_id=124649054]
+shape = SubResource("CircleShape2D_7mycd")
+
+[node name="Trail" type="Line2D" parent="Cutter" unique_id=1892835261]

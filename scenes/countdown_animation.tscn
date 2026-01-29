@@ -1,0 +1,98 @@
+[gd_scene format=3 uid="uid://c1x4oc0gqfn45"]
+
+[ext_resource type="Script" uid="uid://bs0hkg5aj1jkk" path="res://scripts/countdown_animation.gd" id="1_gl0yp"]
+[ext_resource type="FontFile" uid="uid://hewc2akfmln8" path="res://assets/fonts/CherryBombOne-Regular.ttf" id="1_gputc"]
+
+[sub_resource type="Animation" id="Animation_74q3a"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Background:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CountdownText:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_gl0yp"]
+resource_name = "fade_in"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Background:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 4, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CountdownText:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 4, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_74q3a"]
+_data = {
+&"RESET": SubResource("Animation_74q3a"),
+&"fade_in": SubResource("Animation_gl0yp")
+}
+
+[node name="CountdownAnimation" type="Node" unique_id=1864382348 node_paths=PackedStringArray("background", "countdownText")]
+script = ExtResource("1_gl0yp")
+background = NodePath("Background")
+countdownText = NodePath("CountdownText")
+
+[node name="Background" type="ColorRect" parent="." unique_id=1630285943]
+modulate = Color(1, 1, 1, 0)
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0.012617188, 0.012617188, 0.012617188, 1)
+
+[node name="CountdownText" type="RichTextLabel" parent="." unique_id=1669151376]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("1_gputc")
+theme_override_font_sizes/normal_font_size = 72
+bbcode_enabled = true
+text = "[rainbow freq=0.1][wave amp=25.0 freq=10.0 connected=0.75][tornado radius=1.0 freq=1.0 connected=150]10 DIAS PARA EL CARNAVAL...[/tornado][/wave]
+"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1009417349]
+libraries/ = SubResource("AnimationLibrary_74q3a")
+autoplay = &"fade_in"

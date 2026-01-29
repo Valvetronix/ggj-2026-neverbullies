@@ -1,0 +1,105 @@
+[gd_scene format=3 uid="uid://xh5p7buxoj6u"]
+
+[ext_resource type="FontFile" uid="uid://hewc2akfmln8" path="res://assets/fonts/CherryBombOne-Regular.ttf" id="1_lti8b"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ouk20"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lti8b"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mae5d"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4hy44"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ytr4m"]
+
+[node name="Menu" type="Control" unique_id=2042092872]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1994543064]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1240.0
+offset_bottom = 680.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="RichTextLabel" parent="." unique_id=102160727]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_right = 1240.0
+offset_bottom = 218.0
+grow_horizontal = 2
+theme_override_fonts/normal_font = ExtResource("1_lti8b")
+theme_override_font_sizes/normal_font_size = 150
+bbcode_enabled = true
+text = "[wave amp=90.0 freq=3.0 connected=0.75][tornado radius=1.0 freq=1.0 connected=150]MAS CARNAVAL![/tornado][/wave]
+"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=583533366]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = 390.0
+offset_right = 605.0
+offset_bottom = 679.0
+grow_vertical = 0
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_bottom = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=917620103]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_constants/separation = 0
+
+[node name="PlayButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=830314599]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.64134556, 0.64134556, 0.64134556, 1)
+theme_override_fonts/font = ExtResource("1_lti8b")
+theme_override_font_sizes/font_size = 96
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ouk20")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_lti8b")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_mae5d")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_4hy44")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ytr4m")
+text = "JUGAR"
+
+[node name="ConfigButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=960620080]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.64134556, 0.64134556, 0.64134556, 1)
+theme_override_fonts/font = ExtResource("1_lti8b")
+theme_override_font_sizes/font_size = 72
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ouk20")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_lti8b")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_mae5d")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_4hy44")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ytr4m")
+text = "CONFIGURACION"
+
+[node name="ExitButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=2089715044]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.64134556, 0.64134556, 0.64134556, 1)
+theme_override_fonts/font = ExtResource("1_lti8b")
+theme_override_font_sizes/font_size = 72
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ouk20")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_lti8b")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_mae5d")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_4hy44")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ytr4m")
+text = "SALIR"
