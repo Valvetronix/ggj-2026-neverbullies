@@ -1,10 +1,12 @@
 [gd_scene format=3 uid="uid://blqsy4k6pbgi4"]
 
 [ext_resource type="PackedScene" uid="uid://c1x4oc0gqfn45" path="res://scenes/countdown_animation.tscn" id="1_2q6dc"]
+[ext_resource type="Script" uid="uid://wvth2lxkavb4" path="res://scripts/level.gd" id="1_w7c3h"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_rd3vj"]
 
 [node name="Level" type="Node" unique_id=2056766894]
+script = ExtResource("1_w7c3h")
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1714119518]
 modulate = Color(0.13524511, 0.14897059, 0.27053925, 1)
@@ -12,4 +14,15 @@ scale = Vector2(1920, 1080)
 texture = SubResource("CanvasTexture_rd3vj")
 centered = false
 
-[node name="CountdownAnimation" parent="." unique_id=1864382348 instance=ExtResource("1_2q6dc")]
+[node name="FinishDayButton" type="Button" parent="." unique_id=1467704174]
+offset_left = 533.0
+offset_top = 373.0
+offset_right = 1348.0
+offset_bottom = 658.0
+theme_override_font_sizes/font_size = 80
+text = "FINALIZAR DIA"
+
+[node name="CountdownTransition" parent="." unique_id=241219893 instance=ExtResource("1_2q6dc")]
+
+[connection signal="day_finished" from="." to="CountdownTransition" method="_on_level_day_finished"]
+[connection signal="pressed" from="FinishDayButton" to="." method="_on_finish_day_button_pressed"]
