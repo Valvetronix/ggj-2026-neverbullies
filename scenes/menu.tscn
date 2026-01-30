@@ -1,113 +1,39 @@
 [gd_scene format=3 uid="uid://xh5p7buxoj6u"]
 
-[ext_resource type="Script" uid="uid://bdverb6gogfyr" path="res://scripts/menu.gd" id="1_vjb58"]
-[ext_resource type="FontFile" uid="uid://hewc2akfmln8" path="res://assets/fonts/CherryBombOne-Regular.ttf" id="1_yqeox"]
-[ext_resource type="PackedScene" uid="uid://blqsy4k6pbgi4" path="res://scenes/level.tscn" id="2_con2f"]
+[ext_resource type="PackedScene" uid="uid://c1x4oc0gqfn45" path="res://scenes/countdown_animation.tscn" id="1_con2f"]
+[ext_resource type="Script" uid="uid://3gj00gab1jic" path="res://scripts/client_window.gd" id="2_mhnvy"]
+[ext_resource type="Texture2D" uid="uid://bmr4j1k7e2enl" path="res://assets/backgrounds/recibimiento_cliente.png" id="3_4ytvr"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ouk20"]
+[sub_resource type="CanvasTexture" id="CanvasTexture_rd3vj"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lti8b"]
+[node name="Level" type="Node" unique_id=2056766894]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mae5d"]
+[node name="Background" type="Sprite2D" parent="." unique_id=1714119518]
+modulate = Color(0.13524511, 0.14897059, 0.27053925, 1)
+scale = Vector2(1920, 1080)
+texture = SubResource("CanvasTexture_rd3vj")
+centered = false
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4hy44"]
+[node name="CountdownAnimation" parent="." unique_id=1864382348 instance=ExtResource("1_con2f")]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ytr4m"]
+[node name="ClientWindow" type="Node2D" parent="." unique_id=849482920 node_paths=PackedStringArray("cw_background", "cw_client", "cw_next_window_button", "cw_dialogue_bubble")]
+script = ExtResource("2_mhnvy")
+cw_background = NodePath("CWBackground")
+cw_client = NodePath("CWClient")
+cw_next_window_button = NodePath("CWNextWindowButton")
+cw_dialogue_bubble = NodePath("")
 
-[node name="Menu" type="Control" unique_id=2042092872]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-script = ExtResource("1_vjb58")
-level = ExtResource("2_con2f")
+[node name="CWBackground" type="Sprite2D" parent="ClientWindow" unique_id=1148429210]
+position = Vector2(956, 538)
+scale = Vector2(2.676976, 2.676976)
+texture = ExtResource("3_4ytvr")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1994543064]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = 1880.0
-offset_bottom = 1040.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 1)
+[node name="CWClient" type="Sprite2D" parent="ClientWindow" unique_id=1609230617]
+position = Vector2(814, 361)
+scale = Vector2(0.5208767, 0.5203424)
 
-[node name="Label" type="RichTextLabel" parent="." unique_id=102160727]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_right = 1880.0
-offset_bottom = 290.0
-grow_horizontal = 2
-theme_override_fonts/normal_font = ExtResource("1_yqeox")
-theme_override_font_sizes/normal_font_size = 200
-bbcode_enabled = true
-text = "[wave amp=90.0 freq=3.0 connected=0.75][tornado radius=1.0 freq=1.0 connected=150]MAS CARNAVAL![/tornado][/wave]
-"
-fit_content = true
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="MarginContainer" type="MarginContainer" parent="." unique_id=583533366]
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_top = 324.0
-offset_right = 613.0
-offset_bottom = 1036.0
-grow_vertical = 0
-theme_override_constants/margin_left = 12
-theme_override_constants/margin_bottom = 5
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=917620103]
-layout_mode = 2
-size_flags_vertical = 8
-theme_override_constants/separation = 0
-
-[node name="PlayButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=830314599]
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 3
-theme_override_colors/font_color = Color(0.64134556, 0.64134556, 0.64134556, 1)
-theme_override_fonts/font = ExtResource("1_yqeox")
-theme_override_font_sizes/font_size = 140
-theme_override_styles/normal = SubResource("StyleBoxEmpty_ouk20")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_lti8b")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_mae5d")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_4hy44")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_ytr4m")
-text = "JUGAR"
-
-[node name="ConfigButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=960620080]
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 3
-theme_override_colors/font_color = Color(0.64134556, 0.64134556, 0.64134556, 1)
-theme_override_fonts/font = ExtResource("1_yqeox")
-theme_override_font_sizes/font_size = 72
-theme_override_styles/normal = SubResource("StyleBoxEmpty_ouk20")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_lti8b")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_mae5d")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_4hy44")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_ytr4m")
-text = "CONFIGURACION"
-
-[node name="ExitButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=2089715044]
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 3
-theme_override_colors/font_color = Color(0.64134556, 0.64134556, 0.64134556, 1)
-theme_override_fonts/font = ExtResource("1_yqeox")
-theme_override_font_sizes/font_size = 72
-theme_override_styles/normal = SubResource("StyleBoxEmpty_ouk20")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_lti8b")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_mae5d")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_4hy44")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_ytr4m")
-text = "SALIR"
-
-[connection signal="pressed" from="MarginContainer/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/ConfigButton" to="." method="_on_config_button_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
+[node name="CWNextWindowButton" type="Button" parent="ClientWindow" unique_id=1199754886]
+offset_left = 1546.0
+offset_top = 816.0
+offset_right = 1882.0
+offset_bottom = 989.0
