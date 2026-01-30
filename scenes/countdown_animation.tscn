@@ -29,6 +29,18 @@ tracks/1/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("FirstDayBackground:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_gl0yp"]
 resource_name = "fade_in"
@@ -57,6 +69,18 @@ tracks/1/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("FirstDayBackground:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 4, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_74q3a"]
 _data = {
@@ -64,10 +88,17 @@ _data = {
 &"fade_in": SubResource("Animation_gl0yp")
 }
 
-[node name="CountdownAnimation" type="Node" unique_id=1864382348 node_paths=PackedStringArray("background", "countdownText")]
+[node name="CountdownTransition" type="Node" unique_id=987648272 node_paths=PackedStringArray("first_day_background", "background", "countdownText", "animation_player")]
 script = ExtResource("1_gl0yp")
+first_day_background = NodePath("FirstDayBackground")
 background = NodePath("Background")
 countdownText = NodePath("CountdownText")
+animation_player = NodePath("AnimationPlayer")
+
+[node name="FirstDayBackground" type="ColorRect" parent="." unique_id=545308740]
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0, 0, 0, 1)
 
 [node name="Background" type="ColorRect" parent="." unique_id=1630285943]
 modulate = Color(1, 1, 1, 0)
@@ -85,7 +116,7 @@ grow_vertical = 2
 theme_override_fonts/normal_font = ExtResource("1_gputc")
 theme_override_font_sizes/normal_font_size = 72
 bbcode_enabled = true
-text = "[rainbow freq=0.1][wave amp=25.0 freq=10.0 connected=0.75][tornado radius=1.0 freq=1.0 connected=150]10 DIAS PARA EL CARNAVAL...[/tornado][/wave]
+text = "
 "
 fit_content = true
 scroll_active = false
@@ -96,3 +127,6 @@ metadata/_edit_use_anchors_ = true
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1009417349]
 libraries/ = SubResource("AnimationLibrary_74q3a")
 autoplay = &"fade_in"
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="animation_started" from="AnimationPlayer" to="." method="_on_animation_player_animation_started"]
