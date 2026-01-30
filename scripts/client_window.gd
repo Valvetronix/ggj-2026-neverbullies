@@ -1,13 +1,8 @@
-extends Node2D
+extends LevelState
 @export var cw_background: Sprite2D
 @export var cw_client: Sprite2D
-@export var cw_next_window_button: Button
+@export var cw_next_window_button: Button 
 @export var cw_dialogue_bubble: Sprite2D
-
-##Vas a tener que iterar sobre los sprites y asignarlos con el indice. Lo mismo con el pedido
-## Que puede ser un label 
-## Y en algun script commons asocias pedido y mascara. 
-## A revisar los atributos. 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
