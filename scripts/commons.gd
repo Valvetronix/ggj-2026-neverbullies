@@ -1,5 +1,18 @@
 extends Node
 
+
 const CLIENT_SPRITES = []
-const CLIENT_DIALOGUES = {"Quiero una mascara citrica" : {}, "Quiero una mascara primaveral" : {}}
+const CLIENT_DIALOGUES = {
+	"Quiero una mascara citrica" : 
+		[MASKS_COLORS[4],"ANY","ANY", 1],
+	"Quiero una mascara primaveral" : 
+		[MASKS_COLORS[2], "ANY", MASKS_ACCESORY[3]]
+} 
+
 const CLIENT_ORDERS = []
+
+
+const MASKS_COLORS = ["SADDEL_BROWN", "MEDIUM_VIOLET_RED", "HOT_PINK", "RED", "ORANGE", "GOLD", 
+"LAWN_GREEN", "DARK_TURQUOISE", "CYAN", "BLUE", "BLUE_VIOLET", "DIM_GRAY"]
+const MASKS_MATERIAL = ["LEATHER", "PLASTIC", "FABRIC"]
+const MASKS_ACCESORY = ["HORNS", "FEATHERS", "PRECIOUS_STONES", "FLOWERS", "STARTS", "TASSELS", "BUTTONS"]
