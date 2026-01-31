@@ -141,7 +141,7 @@ _data = {
 &"walk": SubResource("Animation_svewj")
 }
 
-[node name="CWClient" type="Sprite2D" unique_id=1432234317]
+[node name="CWClient" type="Node2D" unique_id=858839972]
 scale = Vector2(0.5208767, 0.5203424)
 
 [node name="Sprites" type="Node2D" parent="." unique_id=2061891723]
