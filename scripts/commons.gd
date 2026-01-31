@@ -11,7 +11,11 @@ enum State {
 }
 
 
-const CLIENT_SPRITES = []
+const CLIENT_SPRITES = [
+	"res://assets/sprites/hombre_sprite_completo.png", 
+	"res://assets/sprites/mujer_sprite_completo.png"
+]
+
 const CLIENT_DIALOGUES = {
 	"Quiero una mascara citrica" : 
 		[MASKS_COLORS[4],"ANY","ANY", 1], #"Citrica"
