@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cqn8ko1aiu5f8"
-path="res://.godot/imported/textura_cuero.png-a5969d27aafc9c13c17af2cdd4321bf6.ctex"
+uid="uid://2fleb0a7j8ov"
+path="res://.godot/imported/piedras.png-66b033261de0eb1e5036ae66f698f390.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/backgrounds/textura_cuero.png"
-dest_files=["res://.godot/imported/textura_cuero.png-a5969d27aafc9c13c17af2cdd4321bf6.ctex"]
+source_file="res://assets/accesories/piedras.png"
+dest_files=["res://.godot/imported/piedras.png-66b033261de0eb1e5036ae66f698f390.ctex"]
 
 [params]
 

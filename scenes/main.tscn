@@ -2,8 +2,52 @@
 
 [ext_resource type="Script" uid="uid://78217b3831bd" path="res://scripts/cutter_manager.gd" id="1_sugp2"]
 [ext_resource type="Texture2D" uid="uid://y8lirwb0s364" path="res://assets/backgrounds/mesa_trabajo.png" id="2_0wfyh"]
-[ext_resource type="Texture2D" uid="uid://c222jtqqirah4" path="res://assets/backgrounds/textura_tela.png" id="2_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://b7f32u5cbkkbl" path="res://scenes/parade.tscn" id="3_jyhfs"]
+[ext_resource type="Texture2D" uid="uid://bqb1pqw4god0w" path="res://assets/textures/mat_rollo_cuero.png" id="4_tefeu"]
+[ext_resource type="Texture2D" uid="uid://bofir3fobyqpm" path="res://assets/textures/mat_rollo_tela.png" id="5_o6xl0"]
+[ext_resource type="Texture2D" uid="uid://dym5jasqynxjw" path="res://assets/textures/mat_plastico.png" id="6_tipki"]
+[ext_resource type="Texture2D" uid="uid://1hy0d4n1vokp" path="res://assets/tools/paleta.png" id="7_jkv2x"]
+[ext_resource type="Texture2D" uid="uid://6c71f3idms2w" path="res://assets/accesories/CAJON_BOTON.png" id="8_jbj1t"]
+[ext_resource type="Texture2D" uid="uid://sb4ot4t0fpy0" path="res://assets/accesories/CAJON_FLECOS.png" id="9_muem4"]
+[ext_resource type="Texture2D" uid="uid://bgjlid2s8a782" path="res://assets/accesories/CAJON_FLOR.png" id="10_dp3eg"]
+[ext_resource type="Texture2D" uid="uid://6qg73qnggkft" path="res://assets/accesories/CAJON_OJOS.png" id="11_0ld40"]
+[ext_resource type="Texture2D" uid="uid://x4tq8aum3no5" path="res://assets/accesories/CAJON_BRILLO.png" id="12_gqmmt"]
+[ext_resource type="Texture2D" uid="uid://bc8of3wq4h51p" path="res://assets/accesories/CAJON_CUERNOS.png" id="13_yc10j"]
+[ext_resource type="Texture2D" uid="uid://c0ro3syil4uog" path="res://assets/accesories/CAJON_PIEDRAS.png" id="14_jscy8"]
+[ext_resource type="Texture2D" uid="uid://cynkyi6ri3ju3" path="res://assets/accesories/CAJON_PLUMA.png" id="15_pm3ni"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_sugp2"]
+load_path = "res://.godot/imported/textura_tela.png-d7c4bed614b6504a0931a17dca0870d9.ctex"
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_85g3d"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_eb6dy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tefeu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_choun"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_trceg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o6xl0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ya4ey"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a8y0u"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tipki"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y6deb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_og1vs"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2wyq8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vxglm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2f3dj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yq6so"]
 
 [node name="Main" type="Node2D" unique_id=357197009 node_paths=PackedStringArray("sheet", "spawn", "reference_position_sheet")]
 top_level = true
@@ -11,13 +55,13 @@ script = ExtResource("1_sugp2")
 sheet = NodePath("Sheet")
 spawn = NodePath("ResultContainer")
 reference_position_sheet = NodePath("reference_point")
-texture = ExtResource("2_jyhfs")
+texture = SubResource("CompressedTexture2D_sugp2")
 parade = ExtResource("3_jyhfs")
 metadata/_edit_vertical_guides_ = [387.0, 954.0]
 metadata/_edit_horizontal_guides_ = [588.0]
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1598100241]
-position = Vector2(959, 540)
+position = Vector2(960, 536)
 texture = ExtResource("2_0wfyh")
 
 [node name="Sheet" type="Polygon2D" parent="." unique_id=472698351]
@@ -27,3 +71,178 @@ position = Vector2(955, 589)
 
 [node name="reference_point" type="Node2D" parent="." unique_id=1517666413]
 position = Vector2(377, 242)
+
+[node name="Control" type="Control" parent="." unique_id=960671499]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MarginContainer" type="MarginContainer" parent="Control" unique_id=901943008]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_right = 1880.0
+offset_bottom = 180.0
+grow_horizontal = 2
+
+[node name="textures" type="HBoxContainer" parent="Control/MarginContainer" unique_id=1802784348]
+layout_mode = 2
+alignment = 1
+
+[node name="leather" type="Button" parent="Control/MarginContainer/textures" unique_id=1742959366]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_85g3d")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_eb6dy")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_tefeu")
+icon = ExtResource("4_tefeu")
+
+[node name="fabric" type="Button" parent="Control/MarginContainer/textures" unique_id=808396633]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_choun")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_trceg")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_o6xl0")
+icon = ExtResource("5_o6xl0")
+
+[node name="plastic" type="Button" parent="Control/MarginContainer/textures" unique_id=437701929]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ya4ey")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_a8y0u")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_tipki")
+icon = ExtResource("6_tipki")
+
+[node name="MarginContainer2" type="MarginContainer" parent="Control" unique_id=1103895333]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="color_palette" type="VBoxContainer" parent="Control/MarginContainer2" unique_id=112353924]
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Control/MarginContainer2/color_palette" unique_id=152749100]
+position = Vector2(1821, 136)
+scale = Vector2(0.52, 0.52)
+texture = ExtResource("7_jkv2x")
+
+[node name="brown" type="Button" parent="Control/MarginContainer2/color_palette" unique_id=386861170]
+layout_mode = 2
+
+[node name="terracota" type="Button" parent="Control/MarginContainer2/color_palette" unique_id=1448749896]
+layout_mode = 2
+
+[node name="fuschia" type="Button" parent="Control/MarginContainer2/color_palette" unique_id=189011875]
+layout_mode = 2
+
+[node name="reddish" type="Button" parent="Control/MarginContainer2/color_palette" unique_id=211944088]
+layout_mode = 2
+
+[node name="orange" type="Button" parent="Control/MarginContainer2/color_palette" unique_id=23549874]
+layout_mode = 2
+
+[node name="yellow" type="Button" parent="Control/MarginContainer2/color_palette" unique_id=427781811]
+layout_mode = 2
+
+[node name="auqamarine" type="Button" parent="Control/MarginContainer2/color_palette" unique_id=1118072991]
+layout_mode = 2
+
+[node name="green" type="Button" parent="Control/MarginContainer2/color_palette" unique_id=835307812]
+layout_mode = 2
+
+[node name="skyblue" type="Button" parent="Control/MarginContainer2/color_palette" unique_id=1339539434]
+layout_mode = 2
+
+[node name="purple" type="Button" parent="Control/MarginContainer2/color_palette" unique_id=1229502033]
+layout_mode = 2
+
+[node name="blue" type="Button" parent="Control/MarginContainer2/color_palette" unique_id=696010661]
+layout_mode = 2
+
+[node name="gray" type="Button" parent="Control/MarginContainer2/color_palette" unique_id=1952397188]
+layout_mode = 2
+
+[node name="MarginContainer3" type="MarginContainer" parent="Control" unique_id=383666752]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1581.0
+offset_top = 232.0
+offset_right = 1881.0
+offset_bottom = 1032.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="accesories left" type="VBoxContainer" parent="Control/MarginContainer3" unique_id=1639385061]
+layout_mode = 2
+
+[node name="buttons" type="Button" parent="Control/MarginContainer3/accesories left" unique_id=1062714752]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_y6deb")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_og1vs")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_2wyq8")
+icon = ExtResource("8_jbj1t")
+
+[node name="flecos" type="Button" parent="Control/MarginContainer3/accesories left" unique_id=92328233]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_y6deb")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_og1vs")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_2wyq8")
+icon = ExtResource("9_muem4")
+
+[node name="flowers" type="Button" parent="Control/MarginContainer3/accesories left" unique_id=2104067053]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_y6deb")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_og1vs")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_2wyq8")
+icon = ExtResource("10_dp3eg")
+
+[node name="eyes" type="Button" parent="Control/MarginContainer3/accesories left" unique_id=1328844829]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_y6deb")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_og1vs")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_2wyq8")
+icon = ExtResource("11_0ld40")
+
+[node name="MarginContainer4" type="MarginContainer" parent="Control" unique_id=1758772006]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 243.0
+offset_right = 304.0
+offset_bottom = 1043.0
+grow_vertical = 0
+
+[node name="accesories right" type="VBoxContainer" parent="Control/MarginContainer4" unique_id=735654539]
+layout_mode = 2
+
+[node name="stars" type="Button" parent="Control/MarginContainer4/accesories right" unique_id=1701171970]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_vxglm")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_2f3dj")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_yq6so")
+icon = ExtResource("12_gqmmt")
+
+[node name="horns" type="Button" parent="Control/MarginContainer4/accesories right" unique_id=1951748886]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_vxglm")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_2f3dj")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_yq6so")
+icon = ExtResource("13_yc10j")
+
+[node name="gems" type="Button" parent="Control/MarginContainer4/accesories right" unique_id=1997180631]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_vxglm")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_2f3dj")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_yq6so")
+icon = ExtResource("14_jscy8")
+
+[node name="feathers" type="Button" parent="Control/MarginContainer4/accesories right" unique_id=1685986481]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_vxglm")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_2f3dj")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_yq6so")
+icon = ExtResource("15_pm3ni")
