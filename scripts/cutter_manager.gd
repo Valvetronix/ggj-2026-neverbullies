@@ -1,28 +1,44 @@
 extends Node2D
 
+#region Scene objects vars
 @export var sheet: Polygon2D
-var cutter: CharacterBody2D
 @export var spawn: Node2D
 @export var reference_position_sheet:Node2D
 
 # Configuración de la hoja y del punto inicial del cutter
 @export var sheet_size := Vector2(1130, 710)
-@export var start_offset := Vector2(50, 150)
+#endregion
 
-@export var texture: Texture
+#region Sprites references vars
+@export var texture_leather: Texture
+@export var texture_fabric: Texture
+@export var texture_plastic: Texture
+
+@export var sprite_buttons: Sprite2D
+@export var sprite_flecos: Sprite2D
+@export var sprite_flowers: Sprite2D
+@export var sprite_eyes: Sprite2D
+@export var sprite_stars: Sprite2D
+@export var sprite_horns: Sprite2D
+@export var sprite_gems: Sprite2D
+@export var sprite_feathers: Sprite2D
+
 @export var parade: PackedScene
+#endregion
 
+#region Local vars
 var rect_box: Rect2 = Rect2()
 var is_cutter_placed: bool = false
 var poly_shape: Polygon2D
+var cutter: CharacterBody2D
+#endregion
 
 signal cut_finished(poly: Polygon2D)
 
 func _ready() -> void:
 	_setup_sheet()
 	
-
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("MouseClick") && !is_cutter_placed:
 		is_cutter_placed = true
 		_place_cutter(get_viewport().get_mouse_position())
@@ -116,7 +132,6 @@ func _spawn_cutout(points: PackedVector2Array) -> void:
 	poly_shape = Polygon2D.new()
 	poly_shape.polygon = points
 	poly_shape.color = Color.ORANGE
-	poly_shape.texture = texture
 	spawn.add_child(poly_shape)
 	_clear_work_station()
 	
@@ -137,3 +152,15 @@ func _failed_cut() -> void:
 func _clear_work_station() -> void:
 	sheet.queue_free()
 	cutter.queue_free()
+
+#region Buttons
+func _on_leather_pressed() -> void:
+	sheet.texture = texture_leather
+
+
+func _on_fabric_pressed() -> void:
+	sheet.texture = texture_fabric
+
+func _on_plastic_pressed() -> void:
+	sheet.texture = texture_plastic
+#endregion

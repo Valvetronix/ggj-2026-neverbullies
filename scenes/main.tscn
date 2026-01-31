@@ -16,9 +16,6 @@
 [ext_resource type="Texture2D" uid="uid://c0ro3syil4uog" path="res://assets/accesories/CAJON_PIEDRAS.png" id="14_jscy8"]
 [ext_resource type="Texture2D" uid="uid://cynkyi6ri3ju3" path="res://assets/accesories/CAJON_PLUMA.png" id="15_pm3ni"]
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_sugp2"]
-load_path = "res://.godot/imported/textura_tela.png-d7c4bed614b6504a0931a17dca0870d9.ctex"
-
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_85g3d"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_eb6dy"]
@@ -55,7 +52,6 @@ script = ExtResource("1_sugp2")
 sheet = NodePath("Sheet")
 spawn = NodePath("ResultContainer")
 reference_position_sheet = NodePath("reference_point")
-texture = SubResource("CompressedTexture2D_sugp2")
 parade = ExtResource("3_jyhfs")
 metadata/_edit_vertical_guides_ = [387.0, 954.0]
 metadata/_edit_horizontal_guides_ = [588.0]
@@ -120,8 +116,8 @@ offset_bottom = 40.0
 layout_mode = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="Control/MarginContainer2/color_palette" unique_id=152749100]
-position = Vector2(1821, 136)
-scale = Vector2(0.52, 0.52)
+position = Vector2(1808, 139)
+scale = Vector2(0.5459443, 0.5459443)
 texture = ExtResource("7_jkv2x")
 
 [node name="brown" type="Button" parent="Control/MarginContainer2/color_palette" unique_id=386861170]
@@ -246,3 +242,7 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_vxglm")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_2f3dj")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_yq6so")
 icon = ExtResource("15_pm3ni")
+
+[connection signal="pressed" from="Control/MarginContainer/textures/leather" to="." method="_on_leather_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/textures/fabric" to="." method="_on_fabric_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/textures/plastic" to="." method="_on_plastic_pressed"]
