@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://bx3qx584nvbgc"]
+
+[ext_resource type="FontFile" uid="uid://hewc2akfmln8" path="res://assets/fonts/CherryBombOne-Regular.ttf" id="1_d4i75"]
+
+[node name="HowToPlay" type="Node" unique_id=1979527919]
+
+[node name="Control" type="Control" parent="." unique_id=907758657]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MarginContainer" type="MarginContainer" parent="Control" unique_id=149256640]
+layout_mode = 0
+offset_right = 2106.0
+offset_bottom = 1080.0
+theme_override_constants/margin_left = 400
+theme_override_constants/margin_right = 400
+
+[node name="BoxContainer" type="BoxContainer" parent="Control/MarginContainer" unique_id=365946493]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/MarginContainer/BoxContainer" unique_id=1874450517]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_d4i75")
+text = "¡Se viene el Carnaval! 🎭 Faltan solo 10 días para el gran festejo y, 
+como siempre, todo el mundo dejó su disfraz para último momento.
+Tu misión es simple: convertirte en el artesano estrella de la ciudad.
+
+Cada día recibirás a un cliente con un pedido específico.
+Prestá atención a lo que busca, porque si la máscara no 
+cumple sus expectativas, tu obra terminará en el tacho.
+(por más linda que sea!)
+
+¿Con qué contás en tu taller?
+
+- Materiales: Tela, cuero o plástico.
+
+- Colores.
+
+- Accesorios de todo tipo.
+
+- Tu toque: Tenés libertad total para darle forma a la máscara!"

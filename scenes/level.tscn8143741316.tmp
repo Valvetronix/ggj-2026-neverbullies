@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://blqsy4k6pbgi4"]
+
+[ext_resource type="PackedScene" uid="uid://c1x4oc0gqfn45" path="res://scenes/countdown_animation.tscn" id="1_2q6dc"]
+[ext_resource type="PackedScene" uid="uid://l6m3bcm6537a" path="res://scenes/client_window.tscn" id="1_w7c3h"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_rd3vj"]
+
+[node name="Level" type="Node" unique_id=2056766894]
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1714119518]
+modulate = Color(0.13524511, 0.14897059, 0.27053925, 1)
+scale = Vector2(1920, 1080)
+texture = SubResource("CanvasTexture_rd3vj")
+centered = false
+
+[node name="ClientWindow" parent="." unique_id=846355981 instance=ExtResource("1_w7c3h")]
+
+[node name="CountdownAnimation" parent="." unique_id=1864382348 instance=ExtResource("1_2q6dc")]
