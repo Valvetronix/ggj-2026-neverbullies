@@ -4,7 +4,7 @@ extends CharacterBody2D
 signal cut_finished(points: PackedVector2Array)
 
 # Config
-@export var speed: float = 100.0
+@export var speed: float = 1.0
 @export var trail: Line2D
 @export var finish_cut_threshold: float = 5.0
 
@@ -30,7 +30,8 @@ func _physics_process(_delta: float) -> void:
 	input = get_viewport().get_mouse_position()
 	var targetDirection = (input - position).normalized()
 	var direction = velocity.normalized().lerp(targetDirection, 0.1)
-	velocity = speed * direction.normalized()
+	var newspeed = speed * (input - position).length()
+	velocity = newspeed * direction.normalized()
 	
 	if boundingBox.has_point(position + velocity.normalized()):
 		move_and_slide()
