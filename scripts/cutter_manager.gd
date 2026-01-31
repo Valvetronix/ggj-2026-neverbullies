@@ -3,15 +3,20 @@ extends Node2D
 @export var sheet: Polygon2D
 var cutter: CharacterBody2D
 @export var spawn: Node2D
+@export var reference_position_sheet:Node2D
 
 # Configuración de la hoja y del punto inicial del cutter
-@export var sheet_size := Vector2(400, 300)
+@export var sheet_size := Vector2(1130, 710)
 @export var start_offset := Vector2(50, 150)
+
+@export var texture: Texture
+@export var parade: PackedScene
 
 var rect_box: Rect2 = Rect2()
 var is_cutter_placed: bool = false
 var poly_shape: Polygon2D
 
+signal cut_finished(poly: Polygon2D)
 
 func _ready() -> void:
 	_setup_sheet()
@@ -21,6 +26,13 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("MouseClick") && !is_cutter_placed:
 		is_cutter_placed = true
 		_place_cutter(get_viewport().get_mouse_position())
+		
+	if Input.is_action_just_pressed("ui_accept"):
+		remove_child(spawn)
+		ParadeSingleton.add_child(spawn)
+		ParadeSingleton.add_mask(spawn)
+		get_tree().change_scene_to_packed(parade)
+		pass
 
 func _setup_sheet() -> void:
 	var points = PackedVector2Array([
@@ -33,9 +45,9 @@ func _setup_sheet() -> void:
 	sheet.polygon = points
 	rect_box = _get_bounding_box(points)
 	
-	sheet.position = Vector2(100, 100) 
+	sheet.position = reference_position_sheet.position
 	rect_box.position = sheet.position
-	sheet.color = Color.AQUAMARINE
+	sheet.color = Color.TRANSPARENT
 	
 func _get_bounding_box(poly: PackedVector2Array) -> Rect2:
 	var min_v: Vector2 = poly[0]
@@ -104,10 +116,10 @@ func _spawn_cutout(points: PackedVector2Array) -> void:
 	poly_shape = Polygon2D.new()
 	poly_shape.polygon = points
 	poly_shape.color = Color.ORANGE
-	
+	poly_shape.texture = texture
 	spawn.add_child(poly_shape)
-	poly_shape.position = spawn.position
 	_clear_work_station()
+	
 	
 func _center_points(cent: Vector2, poly: PackedVector2Array) -> void:
 	for p in poly:
