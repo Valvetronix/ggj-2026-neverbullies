@@ -1,0 +1,161 @@
+[gd_scene format=3 uid="uid://dej5ws3cmfgrt"]
+
+[ext_resource type="Texture2D" uid="uid://djq7trnt8t15e" path="res://assets/characters/placeholder/personaje completo.png" id="1_dipmf"]
+[ext_resource type="Texture2D" uid="uid://btva0qeay52op" path="res://assets/characters/placeholder/pierna _izq.png" id="2_5q6u5"]
+[ext_resource type="Texture2D" uid="uid://csttfsafwefio" path="res://assets/characters/placeholder/pierna_der.png" id="3_umycy"]
+[ext_resource type="Texture2D" uid="uid://cxd2i3hd1ob64" path="res://assets/characters/placeholder/torso.png" id="4_7rsog"]
+[ext_resource type="Texture2D" uid="uid://cnkq0hy2ajpsi" path="res://assets/characters/placeholder/brazos_der.png" id="5_dueaf"]
+[ext_resource type="Texture2D" uid="uid://ckg2nya1hiwrf" path="res://assets/characters/placeholder/brazos_izq.png" id="6_ik056"]
+[ext_resource type="Texture2D" uid="uid://cys2eida0qvef" path="res://assets/characters/placeholder/cabeza.png" id="7_ta3x6"]
+
+[sub_resource type="Animation" id="Animation_u5oxf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites/BrazosIzq:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites/BrazosDer:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprites/PiernaIzq:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprites/PiernaDer:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_svewj"]
+resource_name = "walk"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites/BrazosIzq:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites/BrazosDer:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprites/PiernaIzq:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprites/PiernaDer:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_v3vnk"]
+_data = {
+&"RESET": SubResource("Animation_u5oxf"),
+&"walk": SubResource("Animation_svewj")
+}
+
+[node name="CWClient" type="Sprite2D" unique_id=1432234317]
+scale = Vector2(0.5208767, 0.5203424)
+
+[node name="Sprites" type="Node2D" parent="." unique_id=2061891723]
+
+[node name="PersonajeCompleto" type="Sprite2D" parent="Sprites" unique_id=808033745]
+visible = false
+modulate = Color(1, 1, 1, 0.5411765)
+self_modulate = Color(1, 0, 1, 1)
+texture = ExtResource("1_dipmf")
+
+[node name="PiernaIzq" type="Sprite2D" parent="Sprites" unique_id=274398042]
+position = Vector2(-82.55313, 284.4281)
+texture = ExtResource("2_5q6u5")
+
+[node name="PiernaDer" type="Sprite2D" parent="Sprites" unique_id=1148326057]
+position = Vector2(32.63729, 113.38687)
+texture = ExtResource("3_umycy")
+offset = Vector2(38.396797, 171.04123)
+
+[node name="Torso" type="Sprite2D" parent="Sprites" unique_id=1677225574]
+position = Vector2(0, -67.263405)
+texture = ExtResource("4_7rsog")
+
+[node name="BrazosDer" type="Sprite2D" parent="Sprites" unique_id=674016648]
+position = Vector2(74.873764, -169.11942)
+texture = ExtResource("5_dueaf")
+offset = Vector2(34.55712, 136.44862)
+
+[node name="BrazosIzq" type="Sprite2D" parent="Sprites" unique_id=821468719]
+position = Vector2(-74.873764, -169.11942)
+texture = ExtResource("6_ik056")
+offset = Vector2(-34.55713, 136.44862)
+
+[node name="Cabeza" type="Sprite2D" parent="Sprites" unique_id=1554644049]
+position = Vector2(0, -244.07005)
+scale = Vector2(1, 0.9962058)
+texture = ExtResource("7_ta3x6")
+offset = Vector2(0, -109.49573)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=377092404]
+libraries/ = SubResource("AnimationLibrary_v3vnk")
