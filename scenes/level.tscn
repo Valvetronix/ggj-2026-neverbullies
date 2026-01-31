@@ -1,8 +1,7 @@
 [gd_scene format=3 uid="uid://blqsy4k6pbgi4"]
 
 [ext_resource type="PackedScene" uid="uid://c1x4oc0gqfn45" path="res://scenes/countdown_animation.tscn" id="1_2q6dc"]
-[ext_resource type="Script" uid="uid://3gj00gab1jic" path="res://scripts/client_window.gd" id="2_w8frs"]
-[ext_resource type="Texture2D" uid="uid://bmr4j1k7e2enl" path="res://assets/backgrounds/recibimiento_cliente.png" id="3_mx8sn"]
+[ext_resource type="PackedScene" uid="uid://l6m3bcm6537a" path="res://scenes/client_window.tscn" id="1_w7c3h"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_rd3vj"]
 
@@ -14,25 +13,6 @@ scale = Vector2(1920, 1080)
 texture = SubResource("CanvasTexture_rd3vj")
 centered = false
 
+[node name="ClientWindow" parent="." unique_id=846355981 instance=ExtResource("1_w7c3h")]
+
 [node name="CountdownAnimation" parent="." unique_id=1864382348 instance=ExtResource("1_2q6dc")]
-
-[node name="ClientWindow" type="Node2D" parent="." unique_id=849482920 node_paths=PackedStringArray("cw_background", "cw_client", "cw_next_window_button")]
-script = ExtResource("2_w8frs")
-cw_background = NodePath("CWBackground")
-cw_client = NodePath("CWClient")
-cw_next_window_button = NodePath("CWNextWindowButton")
-
-[node name="CWBackground" type="Sprite2D" parent="ClientWindow" unique_id=1148429210]
-position = Vector2(956, 538)
-scale = Vector2(2.676976, 2.676976)
-texture = ExtResource("3_mx8sn")
-
-[node name="CWClient" type="Sprite2D" parent="ClientWindow" unique_id=1609230617]
-position = Vector2(814, 361)
-scale = Vector2(0.5208767, 0.5203424)
-
-[node name="CWNextWindowButton" type="Button" parent="ClientWindow" unique_id=1199754886]
-offset_left = 1546.0
-offset_top = 816.0
-offset_right = 1882.0
-offset_bottom = 989.0

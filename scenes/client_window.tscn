@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://l6m3bcm6537a"]
+
+[ext_resource type="Script" uid="uid://3gj00gab1jic" path="res://scripts/client_window.gd" id="1_1ca7w"]
+[ext_resource type="Texture2D" uid="uid://bmr4j1k7e2enl" path="res://assets/backgrounds/recibimiento_cliente.png" id="2_sqx1h"]
+[ext_resource type="PackedScene" uid="uid://dej5ws3cmfgrt" path="res://scenes/client.tscn" id="3_sqx1h"]
+
+[node name="ClientWindow" type="Node2D" unique_id=846355981 node_paths=PackedStringArray("cw_background", "cw_client", "cw_next_window_button")]
+script = ExtResource("1_1ca7w")
+cw_background = NodePath("CWBackground")
+cw_client = NodePath("")
+cw_next_window_button = NodePath("CWNextWindowButton")
+
+[node name="CWBackground" type="Sprite2D" parent="." unique_id=938842716]
+position = Vector2(959.85565, 540.0438)
+scale = Vector2(2.6662657, 2.666883)
+texture = ExtResource("2_sqx1h")
+
+[node name="CWClient" parent="." unique_id=1432234317 instance=ExtResource("3_sqx1h")]
+position = Vector2(814, 361)
+
+[node name="CWNextWindowButton" type="Button" parent="." unique_id=1188312591]
+offset_left = 1546.0
+offset_top = 816.0
+offset_right = 1882.0
+offset_bottom = 989.0
