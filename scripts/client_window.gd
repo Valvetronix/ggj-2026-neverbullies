@@ -18,5 +18,5 @@ func spawn_client():
 func get_random_client():
 	var random_sprite = randi()%10
 	var random_order = randi()%10
-	#var choosen_sprite = C.CLIENT_SPRITES[random_sprite]
-	#var choosen_orden = C.CLIENT_DIALOGUES[random_order]
+#	var choosen_sprite = C.CLIENT_SPRITES[random_sprite]
+#	var choosen_orden = C.CLIENT_DIALOGUES[random_order]

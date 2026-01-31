@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://ctlnrxvitgamf"]
+
+[ext_resource type="Script" uid="uid://1fmddwf384yf" path="res://scripts/cutter.gd" id="1_pcbcd"]
+[ext_resource type="Texture2D" uid="uid://d3v8eynat77lb" path="res://icon.svg" id="2_kg5or"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7mycd"]
+
+[node name="Cutter" type="CharacterBody2D" unique_id=169033581 node_paths=PackedStringArray("trail")]
+script = ExtResource("1_pcbcd")
+trail = NodePath("Trail")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=253155613]
+scale = Vector2(0.109375, 0.109375)
+texture = ExtResource("2_kg5or")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=803109235]
+shape = SubResource("CircleShape2D_7mycd")
+
+[node name="Trail" type="Line2D" parent="." unique_id=1666997337]
