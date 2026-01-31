@@ -16,10 +16,10 @@ func _on_level_day_finished() -> void:
 	countdownText.text = TEXT_TEMPLATE % remaining_days
 	animation_player.play()
 
-func _on_animation_player_animation_started(anim_name: StringName) -> void:
+func _on_animation_player_animation_started(_anim_name: StringName) -> void:
 	_show()
 
-func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+func _on_animation_player_animation_finished(_anim_name: StringName) -> void:
 	_hide()
 
 func _hide():
