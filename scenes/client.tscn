@@ -58,10 +58,22 @@ tracks/3/keys = {
 "update": 0,
 "values": [0.0]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sprites:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_svewj"]
 resource_name = "walk"
-length = 5.0
+length = 0.8
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -69,10 +81,10 @@ tracks/0/path = NodePath("Sprites/BrazosIzq:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.19999999, 0.39999998, 0.6, 0.79999995),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [0.0]
+"values": [0.0, -0.7853982, 0.0, 0.7853982, 0.0]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -81,10 +93,10 @@ tracks/1/path = NodePath("Sprites/BrazosDer:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.2, 0.39999998, 0.6, 0.79999995),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [0.0]
+"values": [0.0, -0.7853982, 0.0, 0.7853982, 0.0]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -93,10 +105,10 @@ tracks/2/path = NodePath("Sprites/PiernaIzq:rotation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.19999999, 0.39999998, 0.79999995),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [0.0]
+"values": [0.0, 0.5235988, 0.0, 0.0]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -105,10 +117,22 @@ tracks/3/path = NodePath("Sprites/PiernaDer:rotation")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.39999998, 0.6, 0.79999995),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [0.0]
+"values": [0.0, 0.0, -0.5235988, 0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sprites:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(2, 2)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_v3vnk"]
@@ -117,7 +141,7 @@ _data = {
 &"walk": SubResource("Animation_svewj")
 }
 
-[node name="CWClient" type="Sprite2D" unique_id=1432234317]
+[node name="CWClient" type="Node2D" unique_id=858839972]
 scale = Vector2(0.5208767, 0.5203424)
 
 [node name="Sprites" type="Node2D" parent="." unique_id=2061891723]
@@ -129,8 +153,9 @@ self_modulate = Color(1, 0, 1, 1)
 texture = ExtResource("1_dipmf")
 
 [node name="PiernaIzq" type="Sprite2D" parent="Sprites" unique_id=274398042]
-position = Vector2(-82.55313, 284.4281)
+position = Vector2(-42.23648, 109.54324)
 texture = ExtResource("2_5q6u5")
+offset = Vector2(-40.31665, 174.88486)
 
 [node name="PiernaDer" type="Sprite2D" parent="Sprites" unique_id=1148326057]
 position = Vector2(32.63729, 113.38687)
@@ -159,3 +184,6 @@ offset = Vector2(0, -109.49573)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=377092404]
 libraries/ = SubResource("AnimationLibrary_v3vnk")
+
+[node name="Mask" type="Node2D" parent="." unique_id=829227123]
+position = Vector2(0, -370.9096)

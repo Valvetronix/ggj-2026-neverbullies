@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://dx8vf3b08t3kv"]
+
+[ext_resource type="Script" uid="uid://csehlgkjp2law" path="res://scenes/singletons/music_manager.gd" id="1_esqls"]
+[ext_resource type="AudioStream" uid="uid://crv50nnapoxmn" path="res://assets/music/samba.mp3" id="2_u0n3g"]
+[ext_resource type="AudioStream" uid="uid://du4j0ol0qrd8x" path="res://assets/music/game.mp3" id="2_y4p3i"]
+[ext_resource type="AudioStream" uid="uid://bo4gl3qreqfrd" path="res://assets/music/samba2.mp3" id="3_8ck4w"]
+
+[node name="MusicManager" type="Node" unique_id=1523418709 node_paths=PackedStringArray("music_player")]
+script = ExtResource("1_esqls")
+music_player = NodePath("MusicPlayer")
+game = ExtResource("2_y4p3i")
+samba = ExtResource("3_8ck4w")
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="." unique_id=1163901198]
+stream = ExtResource("2_u0n3g")
+autoplay = true

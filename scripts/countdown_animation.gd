@@ -5,7 +5,7 @@ extends Node
 @export var countdownText: RichTextLabel
 @export var animation_player: AnimationPlayer
 
-const TEXT_TEMPLATE: String = "[rainbow freq=0.1][wave amp=25.0 freq=10.0 connected=0.75][tornado radius=1.0 freq=1.0 connected=150]%d DIAS PARA EL CARNAVAL[/tornado][/wave]"
+const TEXT_TEMPLATE: String = "[rainbow freq=0.1][wave amp=25.0 freq=10.0 connected=0.75][tornado radius=1.0 freq=1.0 connected=150]%d días para el carnaval[/tornado][/wave]"
 var remaining_days = 10
 
 func _ready():
@@ -16,10 +16,10 @@ func _on_level_day_finished() -> void:
 	countdownText.text = TEXT_TEMPLATE % remaining_days
 	animation_player.play()
 
-func _on_animation_player_animation_started(anim_name: StringName) -> void:
+func _on_animation_player_animation_started(_anim_name: StringName) -> void:
 	_show()
 
-func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+func _on_animation_player_animation_finished(_anim_name: StringName) -> void:
 	_hide()
 
 func _hide():

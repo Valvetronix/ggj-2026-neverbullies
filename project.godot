@@ -17,7 +17,9 @@ config/icon="res://icon.svg"
 
 [autoload]
 
+MusicManager="*uid://dx8vf3b08t3kv"
 C="*uid://cpa4ui3ni6vfq"
+ParadeSingleton="*uid://dchmn6xoa4gtt"
 
 [display]
 
