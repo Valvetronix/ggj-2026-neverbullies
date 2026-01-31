@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://dej5ws3cmfgrt"]
 
+[ext_resource type="Script" uid="uid://ccs4fmi60haf1" path="res://scenes/client.gd" id="1_5q6u5"]
 [ext_resource type="Texture2D" uid="uid://djq7trnt8t15e" path="res://assets/characters/placeholder/personaje completo.png" id="1_dipmf"]
 [ext_resource type="Texture2D" uid="uid://btva0qeay52op" path="res://assets/characters/placeholder/pierna _izq.png" id="2_5q6u5"]
 [ext_resource type="Texture2D" uid="uid://csttfsafwefio" path="res://assets/characters/placeholder/pierna_der.png" id="3_umycy"]
@@ -117,8 +118,11 @@ _data = {
 &"walk": SubResource("Animation_svewj")
 }
 
-[node name="CWClient" type="Sprite2D" unique_id=1432234317]
+[node name="CWClient" type="Sprite2D" unique_id=1432234317 node_paths=PackedStringArray("sprites", "cw_client")]
 scale = Vector2(0.5208767, 0.5203424)
+script = ExtResource("1_5q6u5")
+sprites = NodePath("Sprites")
+cw_client = NodePath(".")
 
 [node name="Sprites" type="Node2D" parent="." unique_id=2061891723]
 

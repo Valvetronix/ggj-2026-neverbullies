@@ -8,9 +8,6 @@ var client_dialogues = C.CLIENT_DIALOGUES
 func _ready() -> void:
 	sprites.hide()
 	spawn_client()
-	cw_client.show()
-	print("hola")
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -18,9 +15,10 @@ func _process(delta: float) -> void:
 
 func spawn_client():
 	var data = randomize_client()
+	String(data.client)
 	var sprite_path = data.client
 	var order = data.order
-	cw_client.texture = sprite_path
+	cw_client.texture = load(sprite_path)
 	
 
 func randomize_client():
