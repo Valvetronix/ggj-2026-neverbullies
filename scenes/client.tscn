@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://cnkq0hy2ajpsi" path="res://assets/characters/placeholder/brazos_der.png" id="5_dueaf"]
 [ext_resource type="Texture2D" uid="uid://ckg2nya1hiwrf" path="res://assets/characters/placeholder/brazos_izq.png" id="6_ik056"]
 [ext_resource type="Texture2D" uid="uid://cys2eida0qvef" path="res://assets/characters/placeholder/cabeza.png" id="7_ta3x6"]
+[ext_resource type="Script" uid="uid://b56k4ytqdskqr" path="res://scripts/mask.gd" id="9_umycy"]
 
 [sub_resource type="Animation" id="Animation_u5oxf"]
 length = 0.001
@@ -125,6 +126,7 @@ sprites = NodePath("Sprites")
 cw_client = NodePath(".")
 
 [node name="Sprites" type="Node2D" parent="." unique_id=2061891723]
+visible = false
 
 [node name="PersonajeCompleto" type="Sprite2D" parent="Sprites" unique_id=808033745]
 visible = false
@@ -163,3 +165,6 @@ offset = Vector2(0, -109.49573)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=377092404]
 libraries/ = SubResource("AnimationLibrary_v3vnk")
+
+[node name="Mask" type="Node2D" parent="." unique_id=2060408519]
+script = ExtResource("9_umycy")

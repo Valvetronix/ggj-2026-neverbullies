@@ -1,4 +1,5 @@
 extends Node2D
+class_name ScoreManager
 
 var score : int
 
@@ -21,8 +22,12 @@ func compareArray (client_array: Array, actual_array: Array):
 		if index != -1:
 			matches += 1
 			actual_array_copy.remove_at(index)
-	score += matches
-	
+
+	if matches == client_array.size():
+		score += 1
+		if actual_array_copy.is_empty():
+			score += 1
+
 func compareIndex (client_index: int, actual_index: int):
 	if client_index == actual_index:
 		score += 1
