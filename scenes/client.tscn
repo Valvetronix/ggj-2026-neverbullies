@@ -1,12 +1,17 @@
 [gd_scene format=3 uid="uid://dej5ws3cmfgrt"]
 
-[ext_resource type="Texture2D" uid="uid://djq7trnt8t15e" path="res://assets/characters/placeholder/personaje completo.png" id="1_dipmf"]
-[ext_resource type="Texture2D" uid="uid://btva0qeay52op" path="res://assets/characters/placeholder/pierna _izq.png" id="2_5q6u5"]
+[ext_resource type="Script" uid="uid://bm60fhk2in62p" path="res://scripts/client.gd" id="1_5q6u5"]
+[ext_resource type="Texture2D" uid="uid://bvksqyivvbx74" path="res://assets/characters/mujer_sprite_completo.png" id="2_ik056"]
+[ext_resource type="Texture2D" uid="uid://4m6ppsllwwgd" path="res://assets/characters/placeholder/pierna_izq.png" id="3_ta3x6"]
 [ext_resource type="Texture2D" uid="uid://csttfsafwefio" path="res://assets/characters/placeholder/pierna_der.png" id="3_umycy"]
 [ext_resource type="Texture2D" uid="uid://cxd2i3hd1ob64" path="res://assets/characters/placeholder/torso.png" id="4_7rsog"]
 [ext_resource type="Texture2D" uid="uid://cnkq0hy2ajpsi" path="res://assets/characters/placeholder/brazos_der.png" id="5_dueaf"]
 [ext_resource type="Texture2D" uid="uid://ckg2nya1hiwrf" path="res://assets/characters/placeholder/brazos_izq.png" id="6_ik056"]
-[ext_resource type="Texture2D" uid="uid://cys2eida0qvef" path="res://assets/characters/placeholder/cabeza.png" id="7_ta3x6"]
+[ext_resource type="Texture2D" uid="uid://df4ouberx35yt" path="res://assets/characters/cabeza_mujer.png" id="8_u5oxf"]
+[ext_resource type="Texture2D" uid="uid://00s0dslq7uar" path="res://assets/characters/ojos.png" id="9_svewj"]
+[ext_resource type="Texture2D" uid="uid://dc76iqoeix218" path="res://assets/characters/pelo adelante_mujer.png" id="10_v3vnk"]
+[ext_resource type="Texture2D" uid="uid://deoxbihyrqmlg" path="res://assets/characters/remera_rosa.png" id="11_5j2ty"]
+[ext_resource type="Texture2D" uid="uid://d27mkp7p2uuur" path="res://assets/characters/short_rojo.png" id="12_kcgkk"]
 
 [sub_resource type="Animation" id="Animation_u5oxf"]
 length = 0.001
@@ -58,22 +63,14 @@ tracks/3/keys = {
 "update": 0,
 "values": [0.0]
 }
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Sprites:scale")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1, 1)]
-}
+
+[sub_resource type="Animation" id="Animation_onibj"]
+resource_name = "dance"
 
 [sub_resource type="Animation" id="Animation_svewj"]
 resource_name = "walk"
 length = 0.8
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -122,48 +119,38 @@ tracks/3/keys = {
 "update": 0,
 "values": [0.0, 0.0, -0.5235988, 0.0]
 }
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Sprites:scale")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.8),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(1, 1), Vector2(2, 2)]
-}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_v3vnk"]
 _data = {
 &"RESET": SubResource("Animation_u5oxf"),
+&"dance": SubResource("Animation_onibj"),
 &"walk": SubResource("Animation_svewj")
 }
 
-[node name="CWClient" type="Node2D" unique_id=858839972]
+[node name="Client" type="Node2D" unique_id=858839972 node_paths=PackedStringArray("animation_player")]
 scale = Vector2(0.5208767, 0.5203424)
+script = ExtResource("1_5q6u5")
+animation_player = NodePath("AnimationPlayer")
 
 [node name="Sprites" type="Node2D" parent="." unique_id=2061891723]
 
 [node name="PersonajeCompleto" type="Sprite2D" parent="Sprites" unique_id=808033745]
-visible = false
 modulate = Color(1, 1, 1, 0.5411765)
 self_modulate = Color(1, 0, 1, 1)
-texture = ExtResource("1_dipmf")
+texture = ExtResource("2_ik056")
 
 [node name="PiernaIzq" type="Sprite2D" parent="Sprites" unique_id=274398042]
-position = Vector2(-42.23648, 109.54324)
-texture = ExtResource("2_5q6u5")
+position = Vector2(-36.476963, 119.15231)
+texture = ExtResource("3_ta3x6")
 offset = Vector2(-40.31665, 174.88486)
 
 [node name="PiernaDer" type="Sprite2D" parent="Sprites" unique_id=1148326057]
-position = Vector2(32.63729, 113.38687)
+position = Vector2(40.316643, 126.83956)
 texture = ExtResource("3_umycy")
 offset = Vector2(38.396797, 171.04123)
 
 [node name="Torso" type="Sprite2D" parent="Sprites" unique_id=1677225574]
-position = Vector2(0, -67.263405)
+position = Vector2(0, -67.2634)
 texture = ExtResource("4_7rsog")
 
 [node name="BrazosDer" type="Sprite2D" parent="Sprites" unique_id=674016648]
@@ -177,10 +164,26 @@ texture = ExtResource("6_ik056")
 offset = Vector2(-34.55713, 136.44862)
 
 [node name="Cabeza" type="Sprite2D" parent="Sprites" unique_id=1554644049]
-position = Vector2(0, -244.07005)
+position = Vector2(0, -222.93011)
 scale = Vector2(1, 0.9962058)
-texture = ExtResource("7_ta3x6")
+texture = ExtResource("8_u5oxf")
 offset = Vector2(0, -109.49573)
+
+[node name="Ojos" type="Sprite2D" parent="Sprites" unique_id=1418602692]
+position = Vector2(3.8396802, -359.37875)
+texture = ExtResource("9_svewj")
+
+[node name="Pelo" type="Sprite2D" parent="Sprites" unique_id=875179088]
+position = Vector2(0, -405.50223)
+texture = ExtResource("10_v3vnk")
+
+[node name="RemeraRosa" type="Sprite2D" parent="Sprites" unique_id=860746462]
+position = Vector2(-3.8396804, -82.63789)
+texture = ExtResource("11_5j2ty")
+
+[node name="ShortRojo" type="Sprite2D" parent="Sprites" unique_id=419341271]
+position = Vector2(0, 113.38688)
+texture = ExtResource("12_kcgkk")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=377092404]
 libraries/ = SubResource("AnimationLibrary_v3vnk")

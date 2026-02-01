@@ -2,11 +2,9 @@
 
 [ext_resource type="Script" uid="uid://clu35sv2nv7vc" path="res://scripts/carnival.gd" id="1_n6751"]
 [ext_resource type="Texture2D" uid="uid://bmr4j1k7e2enl" path="res://assets/backgrounds/recibimiento_cliente.png" id="2_papfo"]
-[ext_resource type="PackedScene" uid="uid://dej5ws3cmfgrt" path="res://scenes/client.tscn" id="2_wtv1l"]
 
 [node name="Carnival" type="Node2D" unique_id=2102397988]
 script = ExtResource("1_n6751")
-client_scene = ExtResource("2_wtv1l")
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1442458370]
 scale = Vector2(2.6666667, 2.6666667)
@@ -19,7 +17,7 @@ centered = false
 position = Vector2(266, 382)
 
 [node name="pos2" type="Marker2D" parent="positions" unique_id=784913625]
-position = Vector2(577, 260)
+position = Vector2(598, 205)
 
 [node name="pos3" type="Marker2D" parent="positions" unique_id=1567301496]
 position = Vector2(836, 398)
@@ -34,7 +32,7 @@ position = Vector2(1608, 274)
 position = Vector2(1495, 582)
 
 [node name="pos7" type="Marker2D" parent="positions" unique_id=176049375]
-position = Vector2(629, 717)
+position = Vector2(548, 653)
 
 [node name="pos8" type="Marker2D" parent="positions" unique_id=760258422]
 position = Vector2(1015, 704)

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://btva0qeay52op"
-path="res://.godot/imported/pierna _izq.png-ba3e58dcfc7ded375ef9fd7e3103c168.ctex"
+uid="uid://b5qbtvx70b852"
+path="res://.godot/imported/hombre_sprite_completo.png-94953f92c60022b95db5291927a3de1f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/characters/placeholder/pierna _izq.png"
-dest_files=["res://.godot/imported/pierna _izq.png-ba3e58dcfc7ded375ef9fd7e3103c168.ctex"]
+source_file="res://assets/characters/hombre_sprite_completo.png"
+dest_files=["res://.godot/imported/hombre_sprite_completo.png-94953f92c60022b95db5291927a3de1f.ctex"]
 
 [params]
 
